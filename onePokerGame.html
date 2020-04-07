@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>OnePoker_Game</title>
+    <link rel="stylesheet" type="text/css" href="onePoker.css">
+    <script type="text/javascript" src="onePoker.js"></script>
+</head>
+<body style="height: max-content;">
+    <p style="font-size: 45px; font-family: Impact; color: rgb(6, 2, 70); background-color:white; width: fit-content; box-shadow: 1.5px 1.5px rgb(67, 3, 87), 3px 3px blueviolet; margin-top: 5px;">OnePoker</p>
+    
+    <div class="player1">
+        <div id="life">
+            <p id="life_title">Life</p>
+            <p id="life_gage" aria-placeholder="life"></p>
+        </div>
+        <div>
+            <button id="pl1_card_holder" onclick="checkCard(1)">Check Your Cards.</button>
+            <button id="play" onclick="pushCard(1,1)">PlayCard1</button>
+            <button id="play" onclick="pushCard(1,2)">PlayCard2</button>
+        </div>
+        <div id="player1_light">
+            <button id="pl1_up1">UP</button>
+            <button id="pl1_down1">DOWN</button>
+            <button id="pl1_up2">UP</button>
+            <button id="pl1_down2">DOWN</button>
+        </div>
+        <div class="cardF1">
+            <p id="bet_life" aria-placeholder="bet">Bet Table</p>
+            <img id="card_field1"/>
+        </div>
+    </div>
+    
+
+    <div class="player2">
+        <div id="life">
+            <p id="life_title">Life</p>
+            <p id="life_gage2" aria-placeholder="life"></p>
+        </div>
+        
+        <div>
+            <button id="pl2_card_holder" onclick="checkCard(2)">Check Your Cards.</button>
+            <button id="play" onclick="pushCard(2,1)">PlayCard1</button>
+            <button id="play" onclick="pushCard(2,2)">PlayCard2</button>
+        </div>
+        <div id="player2_light">
+            <button id="pl2_up1">UP</button>
+            <button id="pl2_down1">DOWN</button>
+            <button id="pl2_up2">UP</button>
+            <button id="pl2_down2">DOWN</button>
+        </div>
+        <div class="cardF2">
+            <p id="bet_life2" aria-placeholder="bet">Bet Table</p>
+            <img id="card_field2"/>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="border"></div>
+    
+    <script type="text/javascript" src="./jquery.min.js"></script>
+    <script type="text/javascript" src="./onePokerQuery.js"></script>
+</body>
+</html>
+
+

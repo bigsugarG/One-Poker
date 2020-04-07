@@ -1,0 +1,103 @@
+body{
+    height:100%; margin:0;
+    background-color: #1c2055;
+    overflow: hidden;
+}
+
+.overflow{
+    width: 100%;
+    height: 100%;
+}
+
+.decoration{
+    width: 100vw;
+    height: 100vh;
+    background-color: dimgray;
+    transform: skewY(-30deg);
+    z-index: -1;
+}
+
+.longshadow{
+    width: max-content;
+    height: max-content;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+
+    text-align: center;
+    font-weight: bolder;
+    font-size: 350px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin:0;
+    padding:0px;
+    color: rgb(255, 255, 255);
+    overflow: hidden;
+    text-shadow: 0px 0px #1202aa,
+                             2px 2px #1202aa,
+                             4px 4px #1202aa,
+                             6px 6px #1202aa,
+                             8px 8px #1202aa,
+                             10px 10px #1202aa,
+                             12px 12px #1a09ac,
+                             14px 14px #1a09ac,
+                             16px 16px #1a09ac,
+                             16px 16px #1a09ac,
+                             18px 18px #1a09ac,
+                             20px 20px #2d41b3,
+                             22px 22px #2d41b3,
+                             24px 24px #2d41b3,
+                             26px 26px #2d41b3,
+                             28px 28px #2d41b3,
+                             30px 30px #3f4ea7,
+                             32px 32px #3f4ea7;
+                            /* 以降 伸ばしたい影の流さまで足していく */
+}
+
+.longshadow:hover{
+    font-size: 360px;
+    color:rgb(202, 202, 202);
+    text-shadow: 0px 0px #2f22a1,
+    2px 2px #2f22a1,
+    4px 4px #2f22a1,
+    6px 6px #2f22a1,
+    8px 8px #2f22a1,
+    10px 10px #685ebe,
+    12px 12px #685ebe,
+    14px 14px #685ebe,
+    16px 16px #685ebe,
+    18px 18px #685ebe,
+    20px 20px #9c95e0,
+    22px 22px #9c95e0,
+    24px 24px #9c95e0,
+    26px 26px #9c95e0,
+    28px 28px #9c95e0,
+    30px 30px #cbd0f0,
+    32px 32px #cbd0f0;
+}
+
+.titlezone{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    background: #1a1c36;
+    height: 70vh;
+    width: 100vw;
+}
+
+.sentense{
+    position: absolute;
+    top: 70%;
+    left: 42%;
+    text-align: center;
+    font-size: 100px;
+    color: rgb(191, 255, 255);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    z-index: 2;
+}
