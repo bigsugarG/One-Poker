@@ -61,6 +61,9 @@ function shuffleCard(){
 function getCard(playerNo){
     if(shuffledDeck.length==0){
         alert("Game Over");
+        $(function(){
+            $("html").onclick(location.href='./onePokerGame.html');
+        });
     }else{
         lanpFlag = true;
         if(playerNo==1){
@@ -289,12 +292,12 @@ function gameStream(){
     }
 
     if(gobattle==true){
-        gobattle();
+        gobattle = false;
+        goBattle();
     }
 }
 
-function gobattle(){
-    gobattle = false;
+function goBattle(){
     alert("Mother Sophie「カード、オープン。」");
     cardShow();
 
@@ -321,6 +324,7 @@ function gobattle(){
         endBattle(1);
     }else{alert("Error@gobattle");}
 }
+
 
 function drop(playerNo){
     gobattle=false;
