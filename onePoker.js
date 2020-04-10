@@ -26,7 +26,8 @@ var pl2Totalpoint = 5;
 
 var nextFlag = false;
 var gobattle = false;
-var resetFlag = true;
+var lifeShowFlag = false;
+
 
 window.onload = function(){
     this.shuffleCard();
@@ -181,27 +182,40 @@ function pushCard(playerNo, cardNo){
 
 function betLife(playerNo, betNo){
     if(playerNo==1){
+        var check=0;
         pl1Betpoint += betNo;
         pl1Totalpoint -= betNo;
         document.getElementById("life_gage").textContent="";
         for(i=0;i<pl1Totalpoint;i++){
             document.getElementById("life_gage").insertAdjacentText("beforeend","👸");
+            check++;
         } 
         document.getElementById("bet_life").textContent="";
         for(i=0;i<pl1Betpoint;i++){
             document.getElementById("bet_life").insertAdjacentText("beforeend","👸");
+            check++;
         } 
+        if(check==pl1Totalpoint+pl1Betpoint){
+            lifeShowFlag = true;
+        }
+        
     }else if(playerNo==2){
+        var check=0;
         pl2Betpoint += betNo;
         pl2Totalpoint -= betNo;
         document.getElementById("life_gage2").textContent="";
         for(i=0;i<pl2Totalpoint;i++){
             document.getElementById("life_gage2").insertAdjacentText("beforeend","👸");
+            check++;
         }
         document.getElementById("bet_life2").textContent="";
         for(i=0;i<pl2Betpoint;i++){
             document.getElementById("bet_life2").insertAdjacentText("beforeend","👸");
-        } 
+            check++;
+        }
+        if(check==pl2Totalpoint+pl2Betpoint){
+            lifeShowFlag = true;
+        }
     }else{alert("Error@betLife");}
 }
 
@@ -281,13 +295,16 @@ function gameStream(){
     if(nextFlag==true){
         nextFlag = false;
         if(pl1Betpoint!==0&&pl2Betpoint!==0){
-            if(pl1Betpoint==pl2Betpoint){
-                gobattle = true;
-            }else if(pl1Betpoint>pl2Betpoint){
-                pl2Ready = true;
-            }else if(pl1Betpoint<pl2Betpoint){
-                pl1Ready = true;
-            }else{alert("Error@gameStream_second_if");}
+            if(lifeShowFlag==true){
+                lifeShowFlag = false;
+                if(pl1Betpoint==pl2Betpoint){
+                    gobattle = true;
+                }else if(pl1Betpoint>pl2Betpoint){
+                    pl2Ready = true;
+                }else if(pl1Betpoint<pl2Betpoint){
+                    pl1Ready = true;
+                }else{alert("Error@gameStream_nextFlag");}
+            }
         }
     }
 
@@ -430,7 +447,6 @@ function cardShow(){
 
 function endBattle(playerNo){
     if(playerNo==0){
-        alert("No Contest.");
         pl1Totalpoint += pl1Betpoint;
         pl2Totalpoint += pl2Betpoint;
     }else if(playerNo==1){
@@ -457,6 +473,9 @@ function endBattle(playerNo){
     document.getElementById("pl1_up2").style.backgroundColor = 'rgb(255, 170, 170)';
     document.getElementById("pl2_up1").style.backgroundColor = 'rgb(255, 170, 170)';
     document.getElementById("pl2_up2").style.backgroundColor = 'rgb(255, 170, 170)';
+
+    document.getElementById("bet_life").style.opacity = '60%';
+    document.getElementById("bet_life2").style.opacity = '60%';
 
     pl1Betpoint = 0;
     pl2Betpoint = 0;
