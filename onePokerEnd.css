@@ -1,41 +1,56 @@
-#text{
+img {
+    z-index: 0;
+}
+
+#text {
     font-size: 10vh;
     position: absolute;
     top: 38%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     z-index: 1;
-    color:rgb(255, 255, 255);
-    text-shadow: 0px 0px rgb(95, 0, 124),
-    2px 2px rgb(95, 0, 124),
-    4px 4px rgb(95, 0, 124),
-    5px 5px rgb(48, 0, 124),
-    6px 6px rgb(48, 0, 124);
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px rgb(95, 0, 124), 2px 2px rgb(95, 0, 124), 4px 4px rgb(95, 0, 124), 5px 5px rgb(48, 0, 124), 6px 6px rgb(48, 0, 124);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: none;
 }
 
-#text:hover{
+#text:hover {
     font-size: 10.5vh;
-    color:rgb(255, 192, 192);
-    text-shadow: 0px 0px rgb(81, 7, 104),
-    2px 2px rgb(81, 7, 104),
-    4px 4px rgb(81, 7, 104),
-    5px 5px rgb(44, 13, 94),
-    6px 6px rgb(44, 13, 94);
+    color: rgb(255, 192, 192);
+    text-shadow: 0px 0px rgb(81, 7, 104), 2px 2px rgb(81, 7, 104), 4px 4px rgb(81, 7, 104), 5px 5px rgb(44, 13, 94), 6px 6px rgb(44, 13, 94);
 }
 
-#subtext{
+#subtext {
     font-size: 3.5vh;
     position: absolute;
     top: 62%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     z-index: 1;
-    color:rgb(160, 255, 239);
-    text-shadow: 0px 0px rgb(129, 25, 160),
-    1px 1px rgb(129, 25, 160),
-    2px 2px rgb(129, 25, 160),
-    3px 3px rgb(86, 35, 167),
-    4px 4px rgb(74, 22, 158);
+    color: rgb(160, 255, 239);
+    text-shadow: 0px 0px rgb(129, 25, 160), 1px 1px rgb(129, 25, 160), 2px 2px rgb(129, 25, 160), 3px 3px rgb(86, 35, 167), 4px 4px rgb(74, 22, 158);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: none;
+}
+
+.whiteout {
+    background-color: rgb(54, 31, 31);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+}
+
+.taptap {
+    color: whitesmoke;
+    font-size: 3.5vmin;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 10px rgba(70, 40, 240, 0.9);
+    z-index: 2;
+    display: none;
 }

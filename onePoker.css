@@ -1,9 +1,104 @@
-body{
-    background-color: rgb(74, 76, 175);
+body {
+    background-color: rgb(83, 84, 180);
     overflow: hidden;
 }
 
-.player1{
+.select-dialog {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: cadetblue;
+    border-radius: 25px;
+    box-shadow: 0px 0px #1a1c36, 2px 2px #1a1c36;
+    z-index: 3;
+    font-size: 2.5vmin;
+    color: rgb(2, 37, 2);
+    display: none;
+}
+
+.options {
+    padding: 5px;
+    text-align: center;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 10px;
+    background-color: rgb(47, 141, 118);
+}
+
+.option1,
+.option2 {
+    padding: 10px;
+    border-radius: 40px;
+    border: 2px solid #c0880f;
+    background-color: #e4a215;
+    color: #1202aa;
+    margin-right: 3vw;
+    display: inline;
+    cursor: pointer;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.dialog {
+    border-radius: 25px;
+    box-shadow: 0px 0px #1a1c36, 2px 2px #1a1c36;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    background-color: cadetblue;
+    z-index: 3;
+    font-size: 2.5vmin;
+    color: rgb(2, 37, 2);
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.close-dialog {
+    color: rgb(66, 66, 66);
+    font-size: 3.5vmin;
+}
+
+.fa {
+    margin-right: 0;
+}
+
+.fa-times {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.message,
+.select-message {
+    padding: 10px;
+    margin: 2vmin;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.open {
+    background-color: rgba(165, 165, 165, 0.6);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(255, 251, 0);
+    text-shadow: 0 0 10px rgba(6, 29, 236, 0.7);
+    font-size: 20vmin;
+    z-index: 3;
+    display: none;
+}
+
+.player1 {
     position: absolute;
     left: 0;
     width: 49.5vw;
@@ -11,46 +106,58 @@ body{
     padding-left: 0.3vw;
 }
 
-.player2{
+.player2 {
     position: absolute;
     left: 50%;
-    width: 49.5vw;;
+    width: 49.5vw;
+    ;
     text-align: right;
 }
 
-#pl1_card_holder{
+.pl2_command {
+    position: relative;
+    right: 3%;
+}
+
+#pl1_card_holder {
+    cursor: pointer;
     margin-bottom: 3vh;
     font-size: 3.5vh;
     color: rgb(255, 255, 255);
     width: fit-content;
-    text-shadow: 0px 0px #1202aa,
-    2px 2px #1202aa,
-    3px 3px #1a09ac,
-    4px 4px #2d41b3,
-    5px 5px #3f4ea7;
+    text-shadow: 0px 0px #1202aa, 2px 2px #1202aa, 3px 3px #1a09ac, 4px 4px #2d41b3, 5px 5px #3f4ea7;
     background-color: rgb(28, 49, 88);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .7);
 }
 
-#pl2_card_holder{
+#pl2_card_holder {
+    cursor: pointer;
     margin-bottom: 3vh;
     position: relative;
-    left:0%;
+    left: 0%;
     font-size: 3.5vh;
     color: rgb(255, 255, 255);
     width: fit-content;
-    text-shadow: 0px 0px #1202aa,
-    2px 2px #1202aa,
-    3px 3px #1a09ac,
-    4px 4px #2d41b3,
-    5px 5px #3f4ea7;
+    text-shadow: 0px 0px #1202aa, 2px 2px #1202aa, 3px 3px #1a09ac, 4px 4px #2d41b3, 5px 5px #3f4ea7;
     background-color: rgb(28, 49, 88);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .7);
 }
 
-.cardF1{
+#play {
+    cursor: pointer;
+    background-color: gold;
+    opacity: .8;
+    color: rgb(7, 8, 78);
+    font-size: large;
+    border: none;
+    box-shadow: 0 0 10px rgba(28, 31, 1, .9);
+}
+
+.cardF1 {
     margin: 0;
 }
 
-#bet_life{
+#bet_life {
     margin: 0;
     position: relative;
     left: 5%;
@@ -59,11 +166,10 @@ body{
     width: fit-content;
     color: gold;
     background-color: black;
-    box-shadow: 0px 0px #666666,
-                2px 2px #666666;
+    box-shadow: 0px 0px #666666, 2px 2px #666666;
 }
 
-#card_field1{
+#card_field1 {
     position: relative;
     left: 66%;
     margin: 0%;
@@ -72,11 +178,11 @@ body{
     height: 30vh;
 }
 
-.cardF2{
+.cardF2 {
     margin: 0;
 }
 
-#bet_life2{
+#bet_life2 {
     margin: 0;
     position: relative;
     left: 63%;
@@ -85,11 +191,10 @@ body{
     width: fit-content;
     color: gold;
     background-color: black;
-    box-shadow: 0px 0px #666666,
-                2px 2px #666666;
+    box-shadow: 0px 0px #666666, 2px 2px #666666;
 }
 
-#card_field2{
+#card_field2 {
     position: relative;
     right: 64%;
     margin: 0;
@@ -98,24 +203,24 @@ body{
     height: 30vh;
 }
 
-#life{
+#life {
     position: relative;
     left: 37%;
     top: -7vh;
     text-align: center;
 }
 
-#life_gage, #life_gage2{
+#life_gage,
+#life_gage2 {
     width: fit-content;
     font-size: xx-large;
     color: gold;
     margin-top: 0.3vh;
     background-color: black;
-    box-shadow: 0px 0px #666666,
-                2px 2px #666666;
+    box-shadow: 0px 0px #666666, 2px 2px #666666;
 }
 
-#life_title{
+#life_title {
     position: relative;
     left: 0%;
     bottom: 0%;
@@ -125,11 +230,13 @@ body{
     background-color: black;
     color: gold;
     font-size: xx-large;
-    box-shadow: 0px 0px #666666,
-                2px 2px #666666;
+    box-shadow: 0px 0px #666666, 2px 2px #666666;
 }
 
-#pl1_up1,#pl1_up2,#pl2_up1,#pl2_up2{
+#pl1_up1,
+#pl1_up2,
+#pl2_up1,
+#pl2_up2 {
     display: none;
     position: relative;
     left: 2.5vw;
@@ -137,7 +244,7 @@ body{
     display: inline-block;
     text-decoration: none;
     background: rgb(255, 170, 170);
-    color:#FFF;
+    color: #FFF;
     width: 8vw;
     font-size: large;
     height: 14vh;
@@ -145,15 +252,17 @@ body{
     border-radius: 50%;
     text-align: center;
     overflow: hidden;
-    box-shadow: inset 0px 3px 0 rgba(255,255,255,0.3), 0 3px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 3px 0 rgba(255, 255, 255, 0.3), 0 3px 3px rgba(0, 0, 0, 0.3);
     font-weight: bold;
     border-bottom: solid 3px #3c0749;
-    text-shadow: 1px 1px 1px rgba(148, 33, 33, 0.65),
-    2px 2px 2px rgba(148, 33, 33, 0.65);
+    text-shadow: 1px 1px 1px rgba(148, 33, 33, 0.65), 2px 2px 2px rgba(148, 33, 33, 0.65);
     transition: .4s;
 }
 
-#pl1_down1,#pl1_down2,#pl2_down1,#pl2_down2{
+#pl1_down1,
+#pl1_down2,
+#pl2_down1,
+#pl2_down2 {
     display: none;
     position: relative;
     left: 2.5vw;
@@ -169,40 +278,39 @@ body{
     border-radius: 50%;
     text-align: center;
     overflow: hidden;
-    box-shadow: inset 0px 3px 0 rgba(255,255,255,0.3), 0 3px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 3px 0 rgba(255, 255, 255, 0.3), 0 3px 3px rgba(0, 0, 0, 0.3);
     font-weight: bold;
     border-bottom: solid 3px #3c0749;
-    text-shadow: 1px 1px 1px rgba(148, 33, 33, 0.65),
-    2px 2px 2px rgba(148, 33, 33, 0.65);
+    text-shadow: 1px 1px 1px rgba(148, 33, 33, 0.65), 2px 2px 2px rgba(148, 33, 33, 0.65);
     transition: .4s;
 }
 
-#player1_light{
+#player1_light {
     padding: 0.5em 1em;
     margin-bottom: 0;
     width: max-content;
     background: #c0880f;
-    box-shadow: 6px 6px #5f5413;
+    box-shadow: 2.5px 2.5px #5f5413, 5px 5px #5f5413, 10px 10px #5f5413;
     border-radius: 10px;
     position: relative;
     left: 0.1vw;
     top: 1vh;
 }
 
-#player2_light{
+#player2_light {
     padding: 0.5em 1em;
     margin-bottom: 0;
     width: max-content;
     background: #c0880f;
-    box-shadow: 6px 6px #5f5413;
+    box-shadow: 2.5px 2.5px #5f5413, 5px 5px #5f5413, 10px 10px #5f5413;
     border-radius: 10px;
     position: relative;
     left: 5vw;
     top: 1vh;
 }
 
-.border{
-    background-color:rgb(255, 230, 0);
+.border {
+    background-color: rgb(255, 230, 0);
     height: 100vh;
     width: 0.5vw;
     position: absolute;

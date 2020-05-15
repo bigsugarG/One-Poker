@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>OnePoker_End</title>
-        <link rel="stylesheet" type="text/css" href="./onePokerEnd.css">
-    </head>
-    <body style="margin: 0; background-color: black; overflow: hidden;">
-        <img style="z-index: 0; width: 100vw; height: 100vh; margin: 0;" src="./images/blood.jpg">
-        <p id="text" onclick="location.href='./onePokerMenu.html'">Game Over</p>
-        <p id="subtext">Click To Start New Game...</p>
-        <script type="text/javascript" src="./jquery.min.js"></script>
-        <script type="text/javascript" src="./onePokerEnd.js"></script>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>OnePoker_GameOver</title>
+    <link rel="stylesheet" type="text/css" href="./onePokerEnd.css">
+</head>
+
+<body style="margin: 0; background-color: black; overflow: hidden;">
+
+    <div class="whiteout">
+        <p class="taptap">TAP</p>
+    </div>
+
+    <img style="z-index: 0; width: 100vw; height: 100vh; margin: 0;" src="./images/blood.jpg">
+    <p id="text" onclick="location.href='./onePokerMenu.html'">Game Over</p>
+    <p id="subtext">Click To Start New Game...</p>
+
+    <iframe src="./sounds/onesecSilent.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+    </iframe>
+    <script type="text/javascript" src="./jquery.min.js"></script>
+    <script type="text/javascript" src="./onePokerEnd.js"></script>
+
+</body>
 
 </html>
